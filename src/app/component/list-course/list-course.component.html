@@ -1,0 +1,40 @@
+<h2>List Course</h2>
+
+<div class="form-group row">
+
+  <label class="col-sm-2 col-form-label">Filter By:</label>
+
+  <div class="col-sm-10">
+    <input [(ngModel)] = "filter" class="form-control"/>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Codigo</th>
+      <th>Release Date</th>
+      <th>Rating</th>
+      <th>Oprions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let course of filteredCourses'>
+      <td scope="row"><img [src]="course.imageUrl" width="40" height="40" alt= "Images Curse"/></td>
+      <td>{{ course.name }}</td>
+      <td>{{ course.price  | currency:'BRL' }}</td>
+      <td>{{ course.code | replace: '-' : ' ' }}</td>
+      <td>{{ course.releaseDate | date: 'dd/MM/yyyy' }}</td>
+      <td>
+        <app-star [rating]="course.rating"></app-star>
+      </td>
+      <td>
+        <div class="btn-group" role="group">
+          <button [routerLink] = "['/courses/info', course.id]" class="btn btn-primary">Edit</button>
+          <button (click)='deleteById(course.id)' class="btn btn-danger" >Delete</button>
+        </div>
+      </td>
+    </tr>
+</table>
