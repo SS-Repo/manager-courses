@@ -19,3 +19,5 @@ Abaixo, seguem links bem bacanas, sobre tópicos de desenvolvimento do app:
 * [Angular 8](https://angular.io/)
 * [Site oficial do GIT](https://git-scm.com/)
 * [Site oficial do GitHub](http://github.com/)
+
+email:sergio.desenvolvedor.web@gmail.com
